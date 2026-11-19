@@ -87,15 +87,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 @media(max-width:840px){.service-panels{grid-template-columns:1fr}.service-panel img{max-height:240px}.hero .hero-grid{grid-template-columns:1fr}.hero .hero-grid>div{grid-column:1}}
 @media(max-width:760px){.hero{min-height:calc(100svh - 95px)}.hero .hero-grid{align-items:end;padding:clamp(155px,28svh,300px) 0 114px}.hero::after{background:linear-gradient(to top,#081525f7 4%,#081525de 41%,#08152564 73%,#08152508 100%)}.hero-photo img{object-position:46% center}.hero-scroll{bottom:44px}.hero h1{font-size:clamp(2.5rem,10vw,4.3rem)}}
 .sourcing-feature{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(22px,5vw,65px);margin:0 0 25px;padding:clamp(20px,3vw,38px);background:#0b1c2c;color:#fff;border-radius:9px}.sourcing-feature h3{font-size:clamp(1.6rem,3vw,2.35rem);line-height:1.12;margin:12px 0 17px}.sourcing-feature p{line-height:1.6;color:#e0e6ee;margin-bottom:14px}.sourcing-feature .eyebrow{color:#e6d4fa;font-size:.75rem}.sector-experience{border-left:1px solid #ffffff40;padding-left:25px}.sector-experience h4{font-size:1rem;margin:0 0 14px}.sector-experience ul{padding:0;list-style:none;display:grid;gap:0;margin:0 0 16px}.sector-experience li{padding:10px 0;border-bottom:1px solid #ffffff26}.sector-experience p{font-size:.9rem}.sourcing-feature .btn{margin-top:8px}@media(max-width:760px){.sourcing-feature{grid-template-columns:1fr}.sector-experience{border-left:0;border-top:1px solid #ffffff40;padding:20px 0 0}}.contract-options{margin:28px 0 34px}.contract-options h3{font-size:clamp(1.5rem,3vw,2rem);color:#0b1c2c;margin-bottom:12px}.contract-options fieldset{border:0;padding:0;margin:0 0 16px;min-width:0}.contract-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.contract-option{display:flex;align-items:start;gap:12px;padding:18px;border:1px solid #d9dfe8;border-radius:8px;background:white;cursor:pointer}.contract-option:has(input:checked){border-color:#623a91;background:#f5f0f9;box-shadow:inset 0 0 0 1px #623a91}.contract-option input{accent-color:#623a91;margin-top:5px;flex:none}.contract-option .contract-need{font-weight:600;color:#54347c;margin-bottom:8px}.contract-option strong{display:block;color:#0b1c2c;font-size:1.1rem;margin-bottom:7px}.contract-option span span{display:block;color:#4b5365;line-height:1.5}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}#service-field[hidden]{display:none}#quote-service{width:100%;padding:10px;background:white;color:#0b1c2c;border:1px solid #bda9ce;border-radius:5px;font:inherit}@media(max-width:650px){.contract-grid{grid-template-columns:1fr}}#contract-menu{width:min(860px,calc(100% - 24px));max-height:90dvh;padding:22px;background:#fff}#contract-menu header{margin-bottom:12px}#contract-menu .contract-options{margin:0}#contract-menu .contract-grid{gap:9px}#contract-menu .contract-option{padding:12px}#contract-menu .contract-option strong{font-size:1rem}#contract-menu .contract-option span span{font-size:.87rem}#contract-menu .section-intro{font-size:.95rem;margin-bottom:16px}#contract-menu .contract-option .contract-need{margin-bottom:5px}@media(max-width:700px){.nav .links{flex-wrap:wrap;gap:12px}.nav .links button{padding:0}#contract-menu{padding:16px}}.hero h1{font-size:clamp(2.45rem,4.5vw,4.75rem);max-width:17ch}.hero .lede{max-width:49ch}.process-intro .btn{white-space:normal;text-align:left}.inquiry-note{font-size:.82rem;color:#596173;line-height:1.4}@media(max-width:760px){.hero h1{font-size:clamp(2.4rem,9.5vw,4rem)}}
-/* Keep the photograph on the open side of the hero and a quiet navy field behind the copy. */
+/* Container hero: closed door supports copy, open cargo remains visible. */
 .hero{background:#081525}
-.hero-photo{right:38%;overflow:hidden}
-.hero-photo img{object-position:42% 50%;filter:saturate(.7) brightness(.88)}
-.hero::after{background:linear-gradient(to right,rgba(8,21,37,.08) 0%,rgba(8,21,37,.18) 22%,rgba(8,21,37,.68) 39%,#081525 57%,#081525 100%)}
+.hero-photo{inset:0;overflow:hidden}
+.hero-photo img{object-position:50% 50%;filter:none}
+.hero .hero-grid{grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:24px}
+.hero .hero-grid>div{grid-column:1}
+.hero::after{background:linear-gradient(90deg,rgba(8,21,37,.88) 0%,rgba(8,21,37,.78) 19%,rgba(8,21,37,.52) 35%,rgba(8,21,37,.16) 49%,rgba(8,21,37,0) 62%)}
+.hero h1{font-size:clamp(2.45rem,4.5vw,4.75rem);max-width:17ch}
 @media(max-width:840px){
- .hero-photo{right:0;bottom:42%}
- .hero-photo img{object-position:48% 43%}
- .hero::after{background:linear-gradient(to bottom,rgba(8,21,37,.08) 0%,rgba(8,21,37,.3) 15%,rgba(8,21,37,.88) 29%,#081525 38%,#081525 100%)}
+ .hero .hero-grid{grid-template-columns:minmax(0,1fr)}
+ .hero .hero-grid>div{max-width:570px}
+ .hero::after{background:linear-gradient(90deg,rgba(8,21,37,.9),rgba(8,21,37,.7) 48%,rgba(8,21,37,.1))}
+}
+@media(max-width:760px){
+ .hero-photo{inset:0 0 auto;height:340px}
+ .hero-photo img{object-position:61% 50%}
+ .hero::after{background:linear-gradient(to bottom,rgba(8,21,37,0) 0,rgba(8,21,37,.12) 180px,#081525 340px)}
+ .hero .hero-grid{padding:300px 0 110px}
+ .hero h1{font-size:clamp(2.4rem,9.5vw,4rem)}
 }
 </style>
 <link rel="canonical" href="https://cleberamonjr.github.io/aoka-group/">
@@ -107,12 +117,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 <main id="inicio">
 <div class="hero">
 <picture class="hero-photo">
-  <source media="(max-width: 760px)" srcset="./canton-fair-960.webp">
-  <img src="./canton-fair-1920.webp" width="1920" height="1280" alt="Vista aérea do complexo da Canton Fair às margens do Rio das Pérolas, em Guangzhou" fetchpriority="high">
+<img src="./hero-container-china.webp" width="1672" height="941" alt="Contêiner azul com uma porta fechada e outra sendo aberta, revelando caixas, em um cenário industrial na China" fetchpriority="high" decoding="async">
 </picture>
 <div class="hero-grid wrap"><div><p class="eyebrow">CHINA ↔ BRASIL</p><h1>Seu próximo fornecedor está na China.<br><span>Você precisa saber em quem confiar.</span></h1><p class="hero-slogan">Porque na China, conosco você se sente em casa.</p><p class="lede">Comparar preços, entender a qualidade e acompanhar um pedido à distância exige tempo e critério. A AOKA une experiência local e conhecimento do seu nicho para você decidir com mais clareza.</p><div class="actions"><button class="btn" data-topic="Sourcing especializado">Quero encontrar meu fornecedor <span aria-hidden="true">↗</span></button><button class="btn ghost" data-calculator>Estimar meu custo no Brasil</button></div></div></div>
 <a href="#servicos" class="hero-scroll">Explore nossos serviços <span aria-hidden="true">↓</span></a>
-<p class="hero-credit"><a href="https://commons.wikimedia.org/wiki/File:Aerial_View,_Zone_A_%26_D,_Canton_Fair_Complex_20230701.jpg">Foto: TimWu007</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Redimensionamento e ajuste de contraste e cor</p>
+<p class="hero-credit">Imagem ilustrativa criada para a AOKA Group</p>
 </div>
 <section class="section wrap" id="servicos">
 <p class="eyebrow">MAIS DE 20 ANOS DE CHINA</p><h2>Você conhece seu mercado. Nós ajudamos a entender a China.</h2>
